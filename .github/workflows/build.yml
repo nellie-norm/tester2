@@ -15,13 +15,14 @@ jobs:
       - name: Run flake8
         run: flake8 .
   unit-testing:
+    needs: python-formatting
     runs-on: ubuntu-latest
     steps:
        - name: unit_test1
-         run: app_test.py
+         run: pytest *.py
   
   deploy-to-impaas:
-    needs: python-formatting
+    needs: unit-testing
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
