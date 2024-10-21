@@ -18,10 +18,16 @@ jobs:
     needs: python-formatting
     runs-on: ubuntu-latest
     steps:
-       - name: unit_test1
-         run: pip install pytest
-       - name: Install pytest
-         run: pytest *.py
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.12
+      - name: unit_test1
+        run: pip install pytest
+      - name: Install pytest
+        run: pytest *.py
   
   deploy-to-impaas:
     needs: unit-testing
