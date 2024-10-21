@@ -1,6 +1,5 @@
 name: Build
-on:
-  - push
+on: [push]
 jobs:
   python-formatting:
     runs-on: ubuntu-latest
@@ -15,15 +14,12 @@ jobs:
         run: pip install flake8
       - name: Run flake8
         run: flake8 .
-  name: Python_check
-  on:
-    - push
-  jobs:
-    python-formatting:
-      runs-on: ubuntu-latest
-      steps:
-        - name: unit_test1
-          run: app_test.py
+  unit-testing:
+    runs-on: ubuntu-latest
+    steps:
+       - name: unit_test1
+         run: app_test.py
+  
   deploy-to-impaas:
     needs: python-formatting
     runs-on: ubuntu-latest
@@ -32,8 +28,8 @@ jobs:
         uses: actions/checkout@v4
       - name: ImPaaS-Deploy
         uses: /impaas/impaas-deploy@v3
-    with:
-      app-name: nell_asal_master_app
-      deployment-token: ${{ secrets.IMPAAS_DEPLOY_TOKEN }}
-      method: PLATFORM
+        with:
+          app-name: nell_asal_master_app
+          deployment-token: ${{ secrets.IMPAAS_DEPLOY_TOKEN }}
+          method: PLATFORM
 
