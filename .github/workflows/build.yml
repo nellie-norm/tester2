@@ -19,6 +19,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
        - name: unit_test1
+         run: pip install pytest
+       - name: Install pytest
          run: pytest *.py
   
   deploy-to-impaas:
