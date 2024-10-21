@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request
+
 app = Flask(__name__)
 
 
@@ -13,17 +14,17 @@ def submit():
     input_age = request.form.get("age")
     return render_template("hello.html", name=input_name, age=input_age)
 
+
 @app.route("/query", methods=["GET"])
 def process_query_route():
-      query = request.args.get("q")
-      return process_query(query)
+    query = request.args.get("q")
+    return process_query(query)
 
 
 def process_query(query):
-        if query == "dinosaurs":
-                return "Dinosaurs ruled the Earth 200 million years ago"
-        elif query == "asteroids":
-                return "Unknown"
-        else:  
-            return "Unknown"
-        
+    if query == "dinosaurs":
+        return "Dinosaurs ruled the Earth 200 million years ago"
+    elif query == "asteroids":
+        return "Unknown"
+    else:
+        return "Unknown"
