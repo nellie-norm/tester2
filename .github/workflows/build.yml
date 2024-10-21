@@ -31,7 +31,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: ImPaaS-Deploy
-    uses: /impaas/impaas-deploy@v3
+        uses: /impaas/impaas-deploy@v3
     with:
       app-name: nell_asal_master_app
       deployment-token: ${{ secrets.IMPAAS_DEPLOY_TOKEN }}
