@@ -38,7 +38,7 @@ jobs:
       - name: ImPaaS-Deploy
         uses: /impaas/impaas-deploy@v3
         with:
-          app-name: nell_asal_master_app
+          app-name: nn1524-sse-app
           deployment-token: ${{ secrets.IMPAAS_DEPLOY_TOKEN }}
           method: PLATFORM
 
