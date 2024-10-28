@@ -39,6 +39,6 @@ jobs:
         uses: /impaas/impaas-deploy@v3
         with:
           app-name: nn1524-sse-app
-          deployment-token: ${{ secrets.IMPAAS_DEPLOY_TOKEN }}
+          deployment-token: ${{ secrets.TSURU_TOKEN_SECRET }}
           method: PLATFORM
 
