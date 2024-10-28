@@ -37,7 +37,7 @@ def process_query(query: str):
     elif "multiplied" in query:
         words = query.split()
         num1 = int(words[2])
-        num2 = int(words[4].replace("?", ""))
+        num2 = int(words[5].replace("?", ""))
         result = str(multiply_numbers(num1, num2))
         return result
     else:
