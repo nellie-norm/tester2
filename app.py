@@ -33,7 +33,12 @@ def process_query(query: str):
         num1 = int(words[2])
         num2 = int(words[4].replace("?", ""))
         result = str(add_numbers(num1, num2))
-        print(query + " ::: " + result)
+        return result
+    elif "multiplied" in query:
+        words = query.split()
+        num1 = int(words[2])
+        num2 = int(words[4].replace("?", ""))
+        result = str(multiply_numbers(num1, num2))
         return result
     else:
         return "Unknown"
@@ -41,3 +46,6 @@ def process_query(query: str):
 
 def add_numbers(num1, num2):
     return num1 + num2
+
+def multiply_numbers(num1, num2):
+    return num1 * num2

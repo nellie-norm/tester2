@@ -17,8 +17,16 @@ def test_process_query_returns_player_name():
 
 
 def test_process_query_returns_addition():
-    assert process_query("What is 88 plus 74?") == str(add_numbers(88, 74))
+    assert process_query("What is 88 plus 74?") == "162" # str(add_numbers(88, 74))
+
+
+def test_process_query_returns_addition():
+    assert process_query("What is 8 multiplied by 3?") == "24" 
 
 
 def add_numbers(num1, num2):
     return num1 + num2
+
+
+def multiply_numbers(num1, num2):
+    return num1 * num2
