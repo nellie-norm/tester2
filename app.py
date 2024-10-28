@@ -28,6 +28,13 @@ def process_query(query: str):
         return "Unknown"
     elif "your name" in query:
         return "nn1524as3824"
+    elif query.count("plus") == 2:
+        words = query.split()
+        num1 = int(words[2])
+        num2 = int(words[4])
+        num3 = int(words[6].replace("?", ""))
+        result = str(add_numbers_twice(num1, num2, num3))
+        return result
     elif "plus" in query:
         words = query.split()
         num1 = int(words[2])
@@ -54,13 +61,6 @@ def process_query(query: str):
         num4 = int(words[10].replace(",", ""))
         num5 = int(words[11].replace("?", ""))
         result = str(identify_prime(num1, num2, num3, num4, num5))
-        return result
-    elif query.count("plus") == 2:
-        words = query.split()
-        num1 = int(words[2])
-        num1 = int(words[4])
-        num3 = int(words[6].replace("?", ""))
-        result = str(add_numbers_twice(num1, num2, num3))
         return result
     else:
         return "Unknown"
