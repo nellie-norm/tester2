@@ -24,9 +24,17 @@ def test_process_query_returns_multiplication():
     assert process_query("What is 8 multiplied by 3?") == "24"
 
 
+def test_process_query_returns_subtraction():
+    assert process_query("What is 10 minus 8?") == "2"
+
+
 def add_numbers(num1, num2):
     return num1 + num2
 
 
 def multiply_numbers(num1, num2):
     return num1 * num2
+
+
+def subtract_numbers(num1, num2):
+    return num1 - num2

@@ -40,6 +40,12 @@ def process_query(query: str):
         num2 = int(words[5].replace("?", ""))
         result = str(multiply_numbers(num1, num2))
         return result
+    elif "minus" in query:
+        words = query.split()
+        num1 = int(words[2])
+        num2 = int(words[4].replace("?", ""))
+        result = str(subtract_numbers(num1, num2))
+        return result
     else:
         return "Unknown"
 
@@ -50,3 +56,7 @@ def add_numbers(num1, num2):
 
 def multiply_numbers(num1, num2):
     return num1 * num2
+
+
+def subtract_numbers(num1, num2):
+    return num1 - num2
