@@ -31,7 +31,7 @@ def process_query(query: str):
     elif "plus" in query:
         words = query.split()
         num1 = int(words[2])
-        num2 = int(words[4])
+        num2 = int(words[4].replace("?", ""))
         return add_numbers(num1, num2)
     else:
         return "Unknown"
