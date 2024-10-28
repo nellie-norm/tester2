@@ -75,7 +75,7 @@ def identify_prime(num1, num2, num3, num4, num5) -> list:
     primes = []
     for num in (num1, num2, num3, num4, num5):
         if is_prime(num):
-            primes.append(num)
+            primes.append(str(num))
     return ", ".join(primes)
 
 
