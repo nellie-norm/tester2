@@ -32,7 +32,9 @@ def process_query(query: str):
         words = query.split()
         num1 = int(words[2])
         num2 = int(words[4].replace("?", ""))
-        return str(add_numbers(num1, num2))
+        result = str(add_numbers(num1, num2))
+        print(query + " ::: " + result)
+        return result
     else:
         return "Unknown"
 
