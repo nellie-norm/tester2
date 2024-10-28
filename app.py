@@ -46,6 +46,15 @@ def process_query(query: str):
         num2 = int(words[4].replace("?", ""))
         result = str(subtract_numbers(num1, num2))
         return result
+    elif "primes" in query:
+        words = query.split()
+        num1 = int(words[7].replace(",", ""))
+        num2 = int(words[8].replace(",", ""))
+        num3 = int(words[9].replace(",", ""))
+        num4 = int(words[10].replace(",", ""))
+        num5 = int(words[11].replace("?", ""))
+        result = str(identify_prime(num1, num2, num3, num4, num5))
+        return result
     else:
         return "Unknown"
 
@@ -60,3 +69,20 @@ def multiply_numbers(num1, num2):
 
 def subtract_numbers(num1, num2):
     return num1 - num2
+
+
+def identify_prime(num1, num2, num3, num4, num5) -> list:
+    primes = []
+    for num in (num1, num2, num3, num4, num5):
+        if is_prime(num):
+            primes.append(num)
+    return ", ".join(primes)
+
+
+def is_prime(n):
+    if n < 2:
+        return False
+    for i in range(2, n):
+        if n % i == 0:
+            return False
+    return True

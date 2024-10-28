@@ -28,6 +28,11 @@ def test_process_query_returns_subtraction():
     assert process_query("What is 10 minus 8?") == "2"
 
 
+def test_process_query_returns_primes():
+    assert (process_query("Which of the following numbers are primes: "
+                          "31, 95, 37, 18, 60?") == "31, 37")
+
+
 def add_numbers(num1, num2):
     return num1 + num2
 
