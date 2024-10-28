@@ -27,6 +27,6 @@ def process_query(query):
     elif query == "asteroids":
         return "Unknown"
     elif "your name" in query:
-        return "Nell and Asal!"
+        return "nn1524as3824"
     else:
         return "Unknown"
