@@ -32,10 +32,15 @@ def process_query(query: str):
         words = query.split()
         num1 = int(words[2])
         num2 = int(words[4].replace("?", ""))
-        return add_numbers(num1, num2)
+        return str(add_numbers(num1, num2))
     else:
         return "Unknown"
 
 
 def add_numbers(num1, num2):
     return num1 + num2
+
+
+print(process_query("What is 88 plus 15?"))
+
+print(process_query("What is your name?"))
