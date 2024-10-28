@@ -55,6 +55,13 @@ def process_query(query: str):
         num5 = int(words[11].replace("?", ""))
         result = str(identify_prime(num1, num2, num3, num4, num5))
         return result
+    elif query.count("plus") == 2:
+        words = query.split()
+        num1 = int(words[2])
+        num1 = int(words[4])
+        num3 = int(words[6].replace("?", ""))
+        result = str(add_numbers_twice(num1, num2, num3))
+        return result
     else:
         return "Unknown"
 
@@ -86,3 +93,7 @@ def is_prime(n):
         if n % i == 0:
             return False
     return True
+
+
+def add_numbers_twice(num1, num2, num3):
+    return num1 + num2 + num3

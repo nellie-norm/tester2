@@ -43,3 +43,7 @@ def multiply_numbers(num1, num2):
 
 def subtract_numbers(num1, num2):
     return num1 - num2
+
+
+def test_process_query_returns_addition_twice():
+    assert process_query("What is 2 plus 3 plus 5?") == "10"
