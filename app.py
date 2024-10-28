@@ -39,8 +39,3 @@ def process_query(query: str):
 
 def add_numbers(num1, num2):
     return num1 + num2
-
-
-print(process_query("What is 88 plus 15?"))
-
-print(process_query("What is your name?"))
