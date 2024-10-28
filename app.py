@@ -21,7 +21,7 @@ def process_query_route():
     return process_query(query)
 
 
-def process_query(query):
+def process_query(query: str):
     if query == "dinosaurs":
         return "Dinosaurs ruled the Earth 200 million years ago"
     elif query == "asteroids":
