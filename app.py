@@ -28,5 +28,14 @@ def process_query(query: str):
         return "Unknown"
     elif "your name" in query:
         return "nn1524as3824"
+    elif "plus" in query:
+        words = query.split()
+        num1 = int(words[2])
+        num2 = int(words[4])
+        return add_numbers(num1, num2)
     else:
         return "Unknown"
+
+
+def add_numbers(num1, num2):
+    return num1 + num2
