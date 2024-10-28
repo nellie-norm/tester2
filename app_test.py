@@ -17,11 +17,11 @@ def test_process_query_returns_player_name():
 
 
 def test_process_query_returns_addition():
-    assert process_query("What is 88 plus 74?") == "162" # str(add_numbers(88, 74))
+    assert process_query("What is 88 plus 74?") == "162"
 
 
-def test_process_query_returns_addition():
-    assert process_query("What is 8 multiplied by 3?") == "24" 
+def test_process_query_returns_multiplication():
+    assert process_query("What is 8 multiplied by 3?") == "24"
 
 
 def add_numbers(num1, num2):
