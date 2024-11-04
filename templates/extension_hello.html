@@ -1,0 +1,39 @@
+<body>
+    <h1 style="text-align: center; font-size: 32px; color: rgb(236, 80, 127);">Hello {{ name }}!</h1>
+    
+    {% if repos %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Repository Name</th>
+                    <th>Last Updated</th>
+                    <th>Owner</th>
+                    <th>Commits</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for repo in repos %}
+                <tr>
+                    <td>{{ repo.name }}</td>
+                    <td>{{ repo.updated_at }}</td>
+                    <td>{{ repo.owner }}</td>
+                    <td>
+                        <ul>
+                            {% for commit in repo.commits %}
+                                <li>
+                                    <strong>Hash:</strong> {{ commit.sha }}<br>
+                                    <strong>Message:</strong> {{ commit.message }}<br>
+                                    <strong>Author:</strong> {{ commit.author }}<br>
+                                    <strong>Date:</strong> {{ commit.date }}
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No repositories found.</p>
+    {% endif %}
+</body>
